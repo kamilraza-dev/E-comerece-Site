@@ -1,0 +1,50 @@
+.product-card {
+    margin-bottom: 20px;
+}
+
+.modal-image {
+    height: 400px;
+    margin: auto;
+}
+
+.btn {
+    border-radius: 10px;
+    margin-left: 20px;
+    border: 2px solid black;
+    background-color: black;
+    color: white;
+}
+
+.btn:hover {
+    transition: 300ms;
+    border: 2px solid black;
+    color: black;
+    background-color: #fff;
+}
+
+.nav-link:hover {
+    cursor: pointer;
+    color: rgba(99, 99, 99, 0.637) !important;
+}
+
+.user-name {
+    font-weight: bolder;
+    color: black;
+    border: 1px solid grey;
+    border-radius: 16px;
+}
+
+.main-icon {
+    color: rgb(255, 217, 0);
+    margin-right: 10px;
+    background-color: black;
+    padding: 8px 6px 8px 6px;
+    border-radius: 50%;
+}
+
+.nav-brand {
+    position: absolute;
+    font-size: 25px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    letter-spacing: 2px;
+}
