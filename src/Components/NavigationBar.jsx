@@ -26,7 +26,15 @@ function NavigationBar() {
             <Container>
                 <Navbar.Brand href="#home">
                     <FontAwesomeIcon icon="shopping-cart" className='main-icon'/>
-                    <span className='nav-brand'>Raza Store</span>
+                    <span className='nav-brand'>Raza Store
+                    {userLogin == 'true' 
+                        ?
+                    <div className='nav-link user-name'>{userName}</div>
+                        :
+                        null   
+                    }
+                    </span>
+                    
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
@@ -35,16 +43,13 @@ function NavigationBar() {
                         userLogin == 'true' ? 
                         <>
                             <Link  className="mx-2 text-decoration-none text-dark nav-link" to="/">Home</Link>
-                            <Link className="mx-2 text-decoration-none text-dark nav-link"  to="/about">About</Link>
                             <Link  className="mx-2 text-decoration-none text-dark nav-link" to="/products">Products</Link>
                             <Link  className="mx-2 text-decoration-none text-dark nav-link" to="/products/categories">Categories</Link>
-                            <div className='nav-link user-name'>{userName}</div>
-                            <Link  className="btn" onClick={userLogout}>Logout</Link>
+                            <Link  className="btn buttons" onClick={userLogout}>Logout</Link>
                         </>
                         : 
                         <>
                             <Link  className="mx-2 text-decoration-none text-dark nav-link" to="/">Home</Link>
-                            <Link className="mx-2 text-decoration-none text-dark nav-link"  to="/about">About</Link>
                             <Link  className="mx-2 text-decoration-none text-dark nav-link" to="/products">Products</Link>
                             <Link  className="mx-2 text-decoration-none text-dark nav-link" to="/products/categories">Categories</Link>
                             <Login />

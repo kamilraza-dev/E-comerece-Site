@@ -3,7 +3,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { useState } from 'react'
 import Products from './pages/Products'
 import Home from './pages/Home';
-import About from './pages/About';
 import { Route, Routes,Navigate } from "react-router-dom";
 import Page404 from './pages/Page404';
 import NavigationBar from './Components/NavigationBar';
@@ -29,7 +28,6 @@ export default function App() {
         user == 'true' ? (
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
             <Route path="/products" element={<Products />} />
             <Route path="/products/:productId" element={<ProductPage />} />
             <Route path="/products/categories" element={<Category />} />
@@ -41,12 +39,11 @@ export default function App() {
             (
               <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
               <Route path="/products" element={<Products />} />
               <Route path="/products/:productId" element={<ProductPage />} />
               <Route path="/products/categories" element={<Category />} />
               <Route path="/products/category/:categoryName" element={<CategoryPage />} />
-              <Route path="*" element={ <Navigate to="/login" replace={true} />} />
+              <Route path="*" element={<Page404 />} />
               </Routes>
             )
       }

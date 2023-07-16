@@ -1,14 +1,15 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Signup from './Signup';
 
 function ProductModal(props) {
+  const state = useState();
+
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  const [index, setIndex] = useState(0);
 
   const loginUser = () => {
     let userEnteredMail = document.getElementById('mail');
@@ -20,7 +21,7 @@ function ProductModal(props) {
 
     if(userEnteredMail.value == userEmail && userEnteredPass.value == UserPassword){
       localStorage.setItem('userLogin', 'true');
-      location.reload();      
+      window.location.reload();      
     } else {
       const inValidMessage = document.getElementById("invalid-message");
       inValidMessage.innerText = "Invalid Details!"

@@ -1,30 +1,50 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import Signup from './Signup';
+import Swal from 'sweetalert2';
 
 function SignupForm() {
+  const state = useState();
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  const [index, setIndex] = useState(0);
+  // const [index, setIndex] = useState(0);
 
   const SaveDetails = () => {
     const userName = document.getElementById('userName').value;
     const userMail = document.getElementById('mail').value;
     const userPass = document.getElementById('userPass').value;
+    if(userName == "" || userMail == "" || userPass == ""){
+      
+      Swal.fire({
+        title: 'Sign Up Error',
+        text: 'Please Fill all Fields',
+        icon: 'error',
+        confirmButtonText: 'Close'
+      })
 
-    localStorage.setItem('UserName', userName);
-    localStorage.setItem('UserEmail', userMail);
-    localStorage.setItem('UserPassword', userPass);
+    } else {
+      localStorage.setItem('UserName', userName);
+      localStorage.setItem('UserEmail', userMail);
+      localStorage.setItem('UserPassword', userPass);
 
-    setShow(false);
+      setShow(false);
+
+      Swal.fire({
+        title: 'Account Created',
+        text: 'Your Account is Created Login to Shop!',
+        icon: 'success',
+        confirmButtonText: 'Close'
+      })
+
+    }
+
   }
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
+      <Button className='buttons' variant="primary" onClick={handleShow}>
         SignUp
       </Button>
       <Modal centered show={show} onHide={handleClose} className='login-modal'>

@@ -284,3 +284,8 @@
   #userPass:focus ~ #invalid-message {
     display: none;
   }
+
+  .buttons {
+    width: fit-content;
+    margin: 5px 0;
+  }
