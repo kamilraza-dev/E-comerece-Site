@@ -8,6 +8,7 @@ import React from 'react';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Cart from '../pages/Cart';
 
 library.add(faShoppingCart);
 
@@ -22,11 +23,14 @@ const userName = localStorage.getItem('UserName');
 
 function NavigationBar() {
     return (
-        <Navbar bg="light" expand="lg">
+        <Navbar bg="light" expand="lg" className='nav-bar'>
             <Container>
                 <Navbar.Brand href="#home">
-                    <FontAwesomeIcon icon="shopping-cart" className='main-icon'/>
-                    <span className='nav-brand'>Raza Store
+                    <span className='nav-brand'>
+                        <span className='nav-brand-name'>
+                        <FontAwesomeIcon icon="shopping-cart" className='main-icon'/>
+                            <p>Raza Store</p>
+                            </span>
                     {userLogin == 'true' 
                         ?
                     <div className='nav-link user-name'>{userName}</div>
@@ -45,6 +49,7 @@ function NavigationBar() {
                             <Link  className="mx-2 text-decoration-none text-dark nav-link" to="/">Home</Link>
                             <Link  className="mx-2 text-decoration-none text-dark nav-link" to="/products">Products</Link>
                             <Link  className="mx-2 text-decoration-none text-dark nav-link" to="/products/categories">Categories</Link>
+                            <Link  className="btn buttons cart-btn text-decoration-none nav-link" to="/cart">Cart</Link>
                             <Link  className="btn buttons" onClick={userLogout}>Logout</Link>
                         </>
                         : 

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Swal from 'sweetalert2';
+import Login from './Login'
 
 function SignupForm() {
   const state = useState();
@@ -37,7 +38,6 @@ function SignupForm() {
         icon: 'success',
         confirmButtonText: 'Close'
       })
-
     }
 
   }

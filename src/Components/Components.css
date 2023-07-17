@@ -47,8 +47,47 @@
 }
 
 .nav-brand {
-    position: absolute;
     font-size: 25px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     letter-spacing: 2px;
+    display: flex;   
+    justify-content: center; 
+    align-items: center;
+}
+
+.nav-brand-name {
+    display: flex;
+}
+
+.nav-brand-name > p {
+    margin: 0;
+}
+
+.modal-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cart-btn {
+    width: fit-content;
+    margin-right: 10px !important;
+
+}
+
+@media (max-width: 995px) {
+    .cart-btn {
+        padding: 5px 10px;
+    }
+}
+
+@media (max-width: 560px) {
+    .nav-brand {
+        flex-direction: column;
+        justify-content: right;
+    }
+
+    .user-name {
+    margin-left: 50px;
+    }
 }

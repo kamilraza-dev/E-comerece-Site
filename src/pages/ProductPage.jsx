@@ -7,6 +7,8 @@ import Login from './Login'
 import './Pages.css'
 import Swal from 'sweetalert2'
 
+let purchasedProduct = [];
+
 
 export default function ProductPage() {
     const { productId } = useParams()
@@ -20,6 +22,7 @@ export default function ProductPage() {
 
     const addToCart = () => {
 
+
         const userLoginCheck = localStorage.getItem("userLogin");
 
         if(userLoginCheck == "true"){
@@ -29,7 +32,14 @@ export default function ProductPage() {
             totalPrice : product.price * productQuantity
         }
 
-        console.log(payload);
+        purchasedProduct.push({
+            productName: payload.title,
+            productPrice: payload.price,
+            productQuantity: payload.productQuantity,
+            totalPrice: payload.totalPrice
+        });
+        
+        console.log(purchasedProduct)
 
         Swal.fire({
             title: 'Item Added to Cart',
@@ -37,6 +47,8 @@ export default function ProductPage() {
             icon: 'success',
             confirmButtonText: 'Continue Shopping'
           })
+
+
         } else {
             Swal.fire({
                 title: 'Login to Shop',

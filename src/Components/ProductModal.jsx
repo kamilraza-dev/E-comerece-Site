@@ -45,13 +45,24 @@ function ProductModal(props) {
 
               </Carousel>
 
-
-
-
-
-
             </div>
-            <div className="col-md-6">Data</div>
+            <div className="col-md-6 modal-details">
+              <h3>
+                <b>{props.details.title}</b>
+              </h3>
+              <p>
+                {props.details.description}
+              </p>
+              <p>
+                Brand Name: <b>{props.details.brand}</b>
+              </p>
+              <p>
+                Rating: <b>{props.details.rating}</b>
+              </p>
+              <h3>
+                <b>${props.details.price}</b>
+              </h3>
+            </div>
 
           </div>
 
