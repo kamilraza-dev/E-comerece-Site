@@ -16,7 +16,7 @@ const userLogin = localStorage.getItem('userLogin');
 
 const userLogout = () => {
     localStorage.setItem('userLogin', 'false');
-    location.reload();
+    window.location.reload();
 }
 
 const userName = localStorage.getItem('UserName');

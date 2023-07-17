@@ -44,6 +44,7 @@ export default function App() {
               <Route path="/products/:productId" element={<ProductPage />} />
               <Route path="/products/categories" element={<Category />} />
               <Route path="/products/category/:categoryName" element={<CategoryPage />} />
+              <Route path="/cart" element={<Home />} />
               <Route path="*" element={<Page404 />} />
               </Routes>
             )
