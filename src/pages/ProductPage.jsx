@@ -7,7 +7,8 @@ import Login from './Login'
 import './Pages.css'
 import Swal from 'sweetalert2'
 
-let purchasedProduct = [];
+export let purchasedProduct = [];
+export let cartTotal = 0;
 
 
 export default function ProductPage() {
@@ -38,7 +39,10 @@ export default function ProductPage() {
             productQuantity: payload.productQuantity,
             totalPrice: payload.totalPrice
         });
-        
+
+        cartTotal += payload.totalPrice;
+
+        console.log(cartTotal)
         console.log(purchasedProduct)
 
         Swal.fire({
