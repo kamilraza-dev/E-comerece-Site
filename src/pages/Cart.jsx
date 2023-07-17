@@ -14,7 +14,7 @@ export default function Cart() {
   const checkOut = () => {
     Swal.fire({
       title: 'Checked Out',
-      text: 'Thanks for Shopping',
+      text: 'Thank you for Shopping',
       icon: 'success',
       confirmButtonText: 'Close'
     })
